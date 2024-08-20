@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#projects{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.items-links{
+    width: 60%;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.items-links button{
+    border: 2px solid #007bff;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #007bff;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: .4s ease;
+    background: #fff;
+}
+
+.items-links button:hover{
+    background: #007bff;
+    color: #fff;
+}
+
+.items-links button.menu-active{
+    background: #007bff;
+    color: #fff;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+}
+
+.project-img{
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 px rgba(175, 175, 175, 0.4);
+    height: 14rem;
+    transition: .2s;
+    animation: SclAnimation .4s ease;
+    position: relative;
+}
+
+.project-img:hover {
+    transform: scale(1.1);
+}
+
+img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+.project-img:hover .overlay{
+    top: 0;
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(transparent,#007bff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    transition: .4s ease;
+}
+.overlay h4 {
+    font-size: 20px;
+    color: #fff;
+}
+.action-aria{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 7px 14px;
+    background: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: .4s ease;
+}
+.btn-light {
+    background: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+.btn:hover {
+    background: transparent;
+    border: #fff;
+    color: #fff;
+}
+.btn-light:hover {
+    background: #fff;
+    color: #007bff;
+}
+@keyframes SclAnimation {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+
+/* Media queries for responsiveness */
+
+
+@media (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+    .items-links {
+        width: 90%;
+    }
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .items-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .items-links button {
+        width: 100%;
+        padding: 10px;
+    }
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
